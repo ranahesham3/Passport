@@ -1,0 +1,36 @@
+{
+  "name": "passport",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "connect-mongodb-session": "^5.0.0",
+    "dotenv": "^17.2.1",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.18.2",
+    "mongoose": "^8.18.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/express": "^5.0.3",
+    "@types/express-flash": "^0.0.5",
+    "@types/express-session": "^1.18.2",
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^24.3.0",
+    "@types/passport": "^1.0.17",
+    "@types/passport-local": "^1.0.38"
+  }
+}
