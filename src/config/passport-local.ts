@@ -2,7 +2,6 @@ import passport from 'passport';
 import { Strategy as localStrategy, IVerifyOptions } from 'passport-local';
 import { compare } from 'bcrypt';
 import { User } from '../model/user';
-import { Types } from 'mongoose';
 
 const customFields = {
     usernameField: 'email', //the name of the field instead of 'username' which passport unerstand

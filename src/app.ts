@@ -4,12 +4,14 @@ import passport from 'passport';
 import session from 'express-session';
 var MongoDBStore = require('connect-mongodb-session')(session);
 
-import { connectDB } from './config/db';
-import { router } from './routes/index';
-import './types';
-import './config/passport-local';
-
 dotenv.config();
+
+import { connectDB } from './config/db';
+import { router as routerLocal } from './routes/index-local';
+import { router as routerJwt } from './routes/index-jwt';
+import './types';
+// import './config/passport-local';
+import './config/passport-jwt';
 
 connectDB();
 
@@ -44,16 +46,17 @@ app.use(
 //-------------------------------------Passport---------------
 app.use(passport.initialize());
 
-app.use(passport.session());
+// app.use(passport.session());
 
 app.use((req, res, next) => {
-    console.log(req.session);
-    console.log(req.user);
+    // console.log(req.session);
+    // console.log(req.user);
     next();
 });
 
 //------------------------------------------------------------
-app.use(router);
+// app.use(routerLocal);
+app.use(routerJwt);
 
 app.listen(3000, () => {
     console.log('working on server with port 3000');

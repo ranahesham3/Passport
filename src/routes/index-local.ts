@@ -8,10 +8,10 @@ export const router: Router = Router();
 
 //protected routes
 router.get('/user-route', isAuth, (req: Request, res: Response) => {
-    res.render('index', { name: req.user!.name });
+    res.render('protected', { name: req.user!.name });
 });
 router.get('/admin-route', isAuth, isAdmin, (req: Request, res: Response) => {
-    res.render('index', { name: 'Admin' + req.user!.name });
+    res.render('protected', { name: 'Admin' + req.user!.name });
 });
 
 //login
@@ -49,6 +49,6 @@ router.post('/register', async (req: Request, res: Response) => {
 router.get('/logout', (req: Request, res: Response) => {
     req.logout((err) => {
         if (err) console.log(err);
-        res.redirect('/protected-route');
+        else res.redirect('/login');
     });
 });
